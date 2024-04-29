@@ -1687,3 +1687,10 @@ TypeError: BaseOperator.__init__() missing 1 required positional argument: 'task
 [2024-04-29T09:40:43.443+0000] {logging_mixin.py:188} INFO - [2024-04-29T09:40:43.443+0000] {dag.py:3096} INFO - Sync 1 DAGs
 [2024-04-29T09:40:43.455+0000] {logging_mixin.py:188} INFO - [2024-04-29T09:40:43.455+0000] {dag.py:3954} INFO - Setting next_dagrun for etl_for_open_weather to 2024-04-29 09:40:00+00:00, run_after=2024-04-29 09:42:00+00:00
 [2024-04-29T09:40:43.470+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/open_weather.py took 0.354 seconds
+[2024-04-29T09:41:14.081+0000] {processor.py:161} INFO - Started process (PID=6935) to work on /opt/airflow/dags/open_weather.py
+[2024-04-29T09:41:14.082+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/open_weather.py for tasks to queue
+[2024-04-29T09:41:14.083+0000] {logging_mixin.py:188} INFO - [2024-04-29T09:41:14.083+0000] {dagbag.py:540} INFO - Filling up the DagBag from /opt/airflow/dags/open_weather.py
+[2024-04-29T09:41:14.384+0000] {processor.py:840} INFO - DAG(s) 'etl_for_open_weather' retrieved from /opt/airflow/dags/open_weather.py
+[2024-04-29T09:41:14.396+0000] {logging_mixin.py:188} INFO - [2024-04-29T09:41:14.395+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2024-04-29T09:41:14.407+0000] {logging_mixin.py:188} INFO - [2024-04-29T09:41:14.407+0000] {dag.py:3954} INFO - Setting next_dagrun for etl_for_open_weather to 2024-04-29 09:40:00+00:00, run_after=2024-04-29 09:42:00+00:00
+[2024-04-29T09:41:14.419+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/open_weather.py took 0.342 seconds

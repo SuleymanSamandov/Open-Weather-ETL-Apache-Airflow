@@ -2502,3 +2502,11 @@
 [2024-04-29T09:40:22.230+0000] {logging_mixin.py:188} INFO - [2024-04-29T09:40:22.230+0000] {dag.py:3954} INFO - Setting next_dagrun for example_xcom_args to None, run_after=None
 [2024-04-29T09:40:22.233+0000] {logging_mixin.py:188} INFO - [2024-04-29T09:40:22.233+0000] {dag.py:3954} INFO - Setting next_dagrun for example_xcom_args_with_operators to None, run_after=None
 [2024-04-29T09:40:22.263+0000] {processor.py:183} INFO - Processing /home/airflow/.local/lib/python3.12/site-packages/airflow/example_dags/example_xcomargs.py took 0.073 seconds
+[2024-04-29T09:40:52.555+0000] {processor.py:161} INFO - Started process (PID=6890) to work on /home/airflow/.local/lib/python3.12/site-packages/airflow/example_dags/example_xcomargs.py
+[2024-04-29T09:40:52.556+0000] {processor.py:830} INFO - Processing file /home/airflow/.local/lib/python3.12/site-packages/airflow/example_dags/example_xcomargs.py for tasks to queue
+[2024-04-29T09:40:52.557+0000] {logging_mixin.py:188} INFO - [2024-04-29T09:40:52.557+0000] {dagbag.py:540} INFO - Filling up the DagBag from /home/airflow/.local/lib/python3.12/site-packages/airflow/example_dags/example_xcomargs.py
+[2024-04-29T09:40:52.563+0000] {processor.py:840} INFO - DAG(s) 'example_xcom_args_with_operators', 'example_xcom_args' retrieved from /home/airflow/.local/lib/python3.12/site-packages/airflow/example_dags/example_xcomargs.py
+[2024-04-29T09:40:52.581+0000] {logging_mixin.py:188} INFO - [2024-04-29T09:40:52.581+0000] {dag.py:3096} INFO - Sync 2 DAGs
+[2024-04-29T09:40:52.592+0000] {logging_mixin.py:188} INFO - [2024-04-29T09:40:52.592+0000] {dag.py:3954} INFO - Setting next_dagrun for example_xcom_args to None, run_after=None
+[2024-04-29T09:40:52.596+0000] {logging_mixin.py:188} INFO - [2024-04-29T09:40:52.596+0000] {dag.py:3954} INFO - Setting next_dagrun for example_xcom_args_with_operators to None, run_after=None
+[2024-04-29T09:40:52.613+0000] {processor.py:183} INFO - Processing /home/airflow/.local/lib/python3.12/site-packages/airflow/example_dags/example_xcomargs.py took 0.063 seconds

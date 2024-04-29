@@ -21331,3 +21331,6 @@ File Path                                                                       
 /home/airflow/.local/lib/python3.12/site-packages/airflow/example_dags/plugins/event_listener.py                                                            0           0  0.03s           2024-04-29T09:40:28
 /home/airflow/.local/lib/python3.12/site-packages/airflow/example_dags/plugins/listener_plugin.py                                                           0           0  0.03s           2024-04-29T09:40:29
 ================================================================================
+[2024-04-29T09:40:58.549+0000] {manager.py:737} INFO - Searching for files in /opt/airflow/dags
+[2024-04-29T09:40:58.578+0000] {manager.py:740} INFO - There are 52 files in /opt/airflow/dags
+[2024-04-29T09:41:16.378+0000] {manager.py:452} INFO - Exiting gracefully upon receiving signal 15
