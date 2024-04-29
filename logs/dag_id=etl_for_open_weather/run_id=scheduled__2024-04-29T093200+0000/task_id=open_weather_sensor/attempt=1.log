@@ -1,0 +1,23 @@
+[2024-04-29T09:34:01.823+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2024-04-29T09:34:01.833+0000] {taskinstance.py:2073} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: etl_for_open_weather.open_weather_sensor scheduled__2024-04-29T09:32:00+00:00 [queued]>
+[2024-04-29T09:34:01.838+0000] {taskinstance.py:2073} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: etl_for_open_weather.open_weather_sensor scheduled__2024-04-29T09:32:00+00:00 [queued]>
+[2024-04-29T09:34:01.839+0000] {taskinstance.py:2303} INFO - Starting attempt 1 of 2
+[2024-04-29T09:34:01.847+0000] {taskinstance.py:2327} INFO - Executing <Task(HttpSensor): open_weather_sensor> on 2024-04-29 09:32:00+00:00
+[2024-04-29T09:34:01.851+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61: DeprecationWarning: This process (pid=3390) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-04-29T09:34:01.852+0000] {standard_task_runner.py:63} INFO - Started process 3392 to run task
+[2024-04-29T09:34:01.852+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'etl_for_open_weather', 'open_weather_sensor', 'scheduled__2024-04-29T09:32:00+00:00', '--job-id', '925', '--raw', '--subdir', 'DAGS_FOLDER/open_weather.py', '--cfg-path', '/tmp/tmpvve0_dkb']
+[2024-04-29T09:34:01.853+0000] {standard_task_runner.py:91} INFO - Job 925: Subtask open_weather_sensor
+[2024-04-29T09:34:01.883+0000] {task_command.py:426} INFO - Running <TaskInstance: etl_for_open_weather.open_weather_sensor scheduled__2024-04-29T09:32:00+00:00 [running]> on host ce94facc171a
+[2024-04-29T09:34:01.939+0000] {taskinstance.py:2644} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='etl_for_open_weather' AIRFLOW_CTX_TASK_ID='open_weather_sensor' AIRFLOW_CTX_EXECUTION_DATE='2024-04-29T09:32:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-04-29T09:32:00+00:00'
+[2024-04-29T09:34:01.940+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2024-04-29T09:34:01.940+0000] {baseoperator.py:399} WARNING - HttpSensor.execute cannot be called outside TaskInstance!
+[2024-04-29T09:34:01.941+0000] {http.py:137} INFO - Poking: /data/2.5/weather?q=Baku&APPID=682dec93d925536760749155cc3096bd
+[2024-04-29T09:34:01.946+0000] {base.py:84} INFO - Using connection ID 'weather_id' for task execution.
+[2024-04-29T09:34:02.306+0000] {base.py:294} INFO - Success criteria met. Exiting.
+[2024-04-29T09:34:02.307+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2024-04-29T09:34:02.314+0000] {taskinstance.py:1205} INFO - Marking task as SUCCESS. dag_id=etl_for_open_weather, task_id=open_weather_sensor, execution_date=20240429T093200, start_date=20240429T093401, end_date=20240429T093402
+[2024-04-29T09:34:02.347+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2024-04-29T09:34:02.367+0000] {taskinstance.py:3482} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2024-04-29T09:34:02.369+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

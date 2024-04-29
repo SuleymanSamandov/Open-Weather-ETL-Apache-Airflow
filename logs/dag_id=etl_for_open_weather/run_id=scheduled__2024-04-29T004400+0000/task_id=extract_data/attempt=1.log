@@ -1,0 +1,48 @@
+[2024-04-29T09:13:27.618+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2024-04-29T09:13:27.646+0000] {taskinstance.py:2073} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: etl_for_open_weather.extract_data scheduled__2024-04-29T00:44:00+00:00 [queued]>
+[2024-04-29T09:13:27.656+0000] {taskinstance.py:2073} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: etl_for_open_weather.extract_data scheduled__2024-04-29T00:44:00+00:00 [queued]>
+[2024-04-29T09:13:27.657+0000] {taskinstance.py:2303} INFO - Starting attempt 1 of 2
+[2024-04-29T09:13:27.679+0000] {taskinstance.py:2327} INFO - Executing <Task(HttpOperator): extract_data> on 2024-04-29 00:44:00+00:00
+[2024-04-29T09:13:27.689+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61: DeprecationWarning: This process (pid=547) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-04-29T09:13:27.691+0000] {standard_task_runner.py:63} INFO - Started process 572 to run task
+[2024-04-29T09:13:27.691+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'etl_for_open_weather', 'extract_data', 'scheduled__2024-04-29T00:44:00+00:00', '--job-id', '72', '--raw', '--subdir', 'DAGS_FOLDER/open_weather.py', '--cfg-path', '/tmp/tmpwo_3yt35']
+[2024-04-29T09:13:27.693+0000] {standard_task_runner.py:91} INFO - Job 72: Subtask extract_data
+[2024-04-29T09:13:27.741+0000] {task_command.py:426} INFO - Running <TaskInstance: etl_for_open_weather.extract_data scheduled__2024-04-29T00:44:00+00:00 [running]> on host ce94facc171a
+[2024-04-29T09:13:27.828+0000] {taskinstance.py:2644} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='etl_for_open_weather' AIRFLOW_CTX_TASK_ID='extract_data' AIRFLOW_CTX_EXECUTION_DATE='2024-04-29T00:44:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-04-29T00:44:00+00:00'
+[2024-04-29T09:13:27.830+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2024-04-29T09:13:27.830+0000] {http.py:169} INFO - Calling HTTP method
+[2024-04-29T09:13:27.839+0000] {base.py:84} INFO - Using connection ID 'weather_id' for task execution.
+[2024-04-29T09:13:27.847+0000] {base.py:84} INFO - Using connection ID 'weather_id' for task execution.
+[2024-04-29T09:13:28.217+0000] {http.py:208} INFO - {"coord":{"lon":49.892,"lat":40.3777},"weather":[{"id":800,"main":"Clear","description":"clear sky","icon":"01d"}],"base":"stations","main":{"temp":298.18,"feels_like":297.55,"temp_min":298.18,"temp_max":298.18,"pressure":1019,"humidity":31},"visibility":10000,"wind":{"speed":9.26,"deg":160},"clouds":{"all":0},"dt":1714381867,"sys":{"type":1,"id":8841,"country":"AZ","sunrise":1714354919,"sunset":1714404798},"timezone":14400,"id":587084,"name":"Baku","cod":200}
+[2024-04-29T09:13:28.217+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2024-04-29T09:13:28.218+0000] {taskinstance.py:2890} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 465, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 432, in _execute_callable
+    return execute_callable(context=context, **execute_callable_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/baseoperator.py", line 400, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/providers/http/operators/http.py", line 166, in execute
+    return self.execute_sync(context=context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/providers/http/operators/http.py", line 172, in execute_sync
+    return self.process_response(context=context, response=response)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/providers/http/operators/http.py", line 215, in process_response
+    return self.response_filter(response, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/airflow/dags/open_weather.py", line 70, in <lambda>
+    response_filter=lambda r:json(r.text),
+                             ^^^^^^^^^^^^
+TypeError: 'module' object is not callable
+[2024-04-29T09:13:28.228+0000] {taskinstance.py:1205} INFO - Marking task as UP_FOR_RETRY. dag_id=etl_for_open_weather, task_id=extract_data, execution_date=20240429T004400, start_date=20240429T091327, end_date=20240429T091328
+[2024-04-29T09:13:28.239+0000] {standard_task_runner.py:110} ERROR - Failed to execute job 72 for task extract_data ('module' object is not callable; 572)
+[2024-04-29T09:13:28.266+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 1
+[2024-04-29T09:13:28.373+0000] {taskinstance.py:3482} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2024-04-29T09:13:28.375+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

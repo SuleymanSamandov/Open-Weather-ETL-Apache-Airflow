@@ -1,0 +1,20 @@
+[2024-04-26T12:53:10.314+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2024-04-26T12:53:10.339+0000] {taskinstance.py:2073} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: test.taskgroup.hello_mars scheduled__2024-04-26T11:32:00+00:00 [queued]>
+[2024-04-26T12:53:10.352+0000] {taskinstance.py:2073} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: test.taskgroup.hello_mars scheduled__2024-04-26T11:32:00+00:00 [queued]>
+[2024-04-26T12:53:10.353+0000] {taskinstance.py:2303} INFO - Starting attempt 1 of 2
+[2024-04-26T12:53:10.372+0000] {taskinstance.py:2327} INFO - Executing <Task(PythonOperator): taskgroup.hello_mars> on 2024-04-26 11:32:00+00:00
+[2024-04-26T12:53:10.385+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61: DeprecationWarning: This process (pid=2372) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-04-26T12:53:10.387+0000] {standard_task_runner.py:63} INFO - Started process 2397 to run task
+[2024-04-26T12:53:10.388+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'test', 'taskgroup.hello_mars', 'scheduled__2024-04-26T11:32:00+00:00', '--job-id', '696', '--raw', '--subdir', 'DAGS_FOLDER/test.py', '--cfg-path', '/tmp/tmppq5aowqt']
+[2024-04-26T12:53:10.390+0000] {standard_task_runner.py:91} INFO - Job 696: Subtask taskgroup.hello_mars
+[2024-04-26T12:53:10.459+0000] {task_command.py:426} INFO - Running <TaskInstance: test.taskgroup.hello_mars scheduled__2024-04-26T11:32:00+00:00 [running]> on host 0cd614caf03f
+[2024-04-26T12:53:10.579+0000] {taskinstance.py:2644} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='test' AIRFLOW_CTX_TASK_ID='taskgroup.hello_mars' AIRFLOW_CTX_EXECUTION_DATE='2024-04-26T11:32:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-04-26T11:32:00+00:00'
+[2024-04-26T12:53:10.581+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2024-04-26T12:53:10.582+0000] {python.py:237} INFO - Done. Returned value was: Hello Mars
+[2024-04-26T12:53:10.582+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2024-04-26T12:53:10.608+0000] {taskinstance.py:1205} INFO - Marking task as SUCCESS. dag_id=test, task_id=taskgroup.hello_mars, execution_date=20240426T113200, start_date=20240426T125310, end_date=20240426T125310
+[2024-04-26T12:53:10.643+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2024-04-26T12:53:10.658+0000] {taskinstance.py:3482} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2024-04-26T12:53:10.660+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

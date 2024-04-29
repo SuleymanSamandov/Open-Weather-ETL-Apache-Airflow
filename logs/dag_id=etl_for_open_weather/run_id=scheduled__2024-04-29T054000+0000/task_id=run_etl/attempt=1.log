@@ -1,0 +1,20 @@
+[2024-04-29T09:25:25.219+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2024-04-29T09:25:25.233+0000] {taskinstance.py:2073} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: etl_for_open_weather.run_etl scheduled__2024-04-29T05:40:00+00:00 [queued]>
+[2024-04-29T09:25:25.242+0000] {taskinstance.py:2073} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: etl_for_open_weather.run_etl scheduled__2024-04-29T05:40:00+00:00 [queued]>
+[2024-04-29T09:25:25.243+0000] {taskinstance.py:2303} INFO - Starting attempt 1 of 2
+[2024-04-29T09:25:25.255+0000] {taskinstance.py:2327} INFO - Executing <Task(PythonOperator): run_etl> on 2024-04-29 05:40:00+00:00
+[2024-04-29T09:25:25.262+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61: DeprecationWarning: This process (pid=2262) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-04-29T09:25:25.264+0000] {standard_task_runner.py:63} INFO - Started process 2281 to run task
+[2024-04-29T09:25:25.263+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'etl_for_open_weather', 'run_etl', 'scheduled__2024-04-29T05:40:00+00:00', '--job-id', '590', '--raw', '--subdir', 'DAGS_FOLDER/open_weather.py', '--cfg-path', '/tmp/tmp87j9vya2']
+[2024-04-29T09:25:25.264+0000] {standard_task_runner.py:91} INFO - Job 590: Subtask run_etl
+[2024-04-29T09:25:25.309+0000] {task_command.py:426} INFO - Running <TaskInstance: etl_for_open_weather.run_etl scheduled__2024-04-29T05:40:00+00:00 [running]> on host ce94facc171a
+[2024-04-29T09:25:25.382+0000] {taskinstance.py:2644} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='etl_for_open_weather' AIRFLOW_CTX_TASK_ID='run_etl' AIRFLOW_CTX_EXECUTION_DATE='2024-04-29T05:40:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-04-29T05:40:00+00:00'
+[2024-04-29T09:25:25.383+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2024-04-29T09:25:25.399+0000] {python.py:237} INFO - Done. Returned value was: None
+[2024-04-29T09:25:25.399+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2024-04-29T09:25:25.407+0000] {taskinstance.py:1205} INFO - Marking task as SUCCESS. dag_id=etl_for_open_weather, task_id=run_etl, execution_date=20240429T054000, start_date=20240429T092525, end_date=20240429T092525
+[2024-04-29T09:25:25.438+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2024-04-29T09:25:25.450+0000] {taskinstance.py:3482} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2024-04-29T09:25:25.452+0000] {local_task_job_runner.py:222} INFO - ::endgroup::
